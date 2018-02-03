@@ -1,36 +1,16 @@
-var BasicCard = require("./BasicCard.js");
-
-var clozeCard = function (text,cloze) {
+var clozeCard = function (text,cloze, partial) {
 	this.text=text;
 	this.cloze=cloze;
-	this.hiddenText=hiddenText;
-	this.partialText=partialText;
+	this.partial=partial;
 	this.errorMessage=function () {
 		console.log("Error");
 }
 	this.viewClozeCard = function () {
-	console.log("Cloze Card created!"
-		"Partial text:" + partialText
-		"Hidden text:" + hiddenText
-		"Full text:" + hiddenText +partialText
-		)
+	console.log("Cloze Card created!")
+	console.log("Hidden text:" + this.partial)
+	console.log("Full text:" + cloze + partial)
+		
 	};
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports = ClozeCard;
+module.exports = clozeCard;
