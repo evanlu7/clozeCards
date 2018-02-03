@@ -14,6 +14,7 @@ function makeCard() {
             name: "basicFront",
             type: "input",
             message: "Write your message for the front of the card",
+            // when the user answers Basic
             when: function(answers) {
 			return answers.introMessage === "Basic"
             }
@@ -44,17 +45,21 @@ function makeCard() {
 
         }
 // return the users responses
+// this will create a new object with the answers provided within inquirer
+// it will then run the view function to view the results placed on the cards placeholders
     ]).then(function(answers) {
-    if (answers.intoMessage === "Basic") {
+    if (answers.introMessage === "Basic") {
         var newBasicCard = new BasicCard(answers.basicFront, answers.basicBack);
         newBasicCard.viewBasicCard();
     } else if (answers.introMessage === "Cloze") {
         var newClozeCard = new ClozeCard(answers.fullText, answers.clozeHidden);
         newClozeCard.viewClozeCard();
     }
+    // asks the user if they would like to make another card
     restart();
 });
 }
+// placed here so it will not start the app twice on restart function
 makeCard();
 
 function restart () {

@@ -1,3 +1,5 @@
+// basic card constuctor to be filled with users inputs
+
 var BasicCard = function(front, back) {
  this.front = front;
  this.back = back;
